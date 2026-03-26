@@ -9,19 +9,47 @@ const slides = [
 "/slider/slide1.jpg",
 "/slider/slide2.jpg",
 "/slider/slide3.jpg",
-"/slider/slide4.jpg"
+"/slider/slide4.jpg",
+"/slider/slide5.jpg",
+"/slider/slide6.jpg",
+"/slider/slide7.jpg",
+"/slider/slide8.jpg",
+"/slider/slide9.jpg",
+"/slider/slide10.jpg",
+"/slider/slide11.jpg"
 ];
 
-const [currentSlide,setCurrentSlide] = useState(0);
+const [currentSlide, setCurrentSlide] = useState(0);
+const iconStyle = {
+  width:"30px",
+  height:"30px",
+  cursor:"pointer"
+};
+const inputStyle = {
+  padding:"12px",
+  border:"1px solid #ddd",
+  borderRadius:"8px",
+  fontSize:"14px",
+  outline:"none",
+  background:"#fff"
+};
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, 3000);
 
-useEffect(()=>{
-const interval = setInterval(()=>{
-setCurrentSlide((prev)=>(prev+1)%slides.length)
-},3000)
+  return () => clearInterval(interval);
+}, []);
 
-return ()=>clearInterval(interval)
+<img
+  src={slides[currentSlide]}
+  style={{
+    width:"100%",
+    height:"400px",
+    objectFit:"cover"
+  }}
+/>
 
-},[])
 
 function sendEmail(e){
 
@@ -86,7 +114,26 @@ boxShadow:"0 2px 10px rgba(0,0,0,0.1)"
 </section>
 
 {/* SLIDER */}
-<img src={slides[currentSlide]} style={{width:"100%",height:"420px",objectFit:"cover"}}/>
+<div
+style={{
+maxWidth:"1200px",
+margin:"30px auto",
+padding:"0 20px"
+}}
+>
+
+<img
+  src={slides[currentSlide]}
+  style={{
+    width:"80%",
+    height:"500px",
+    objectFit:"cover",
+    borderRadius:"12px",
+    boxShadow:"0 6px 20px rgba(0,0,0,0.2)"
+  }}
+/>
+
+</div>
 
 {/* SERVICES */}
 <section id="services" style={{padding:"60px",textAlign:"center"}}>
@@ -117,8 +164,8 @@ marginTop:"40px"
 <h2 style={{color:"#09B7A1", textAlign:"center"}}>Why Qwickrepair?</h2>
 
 <p style={{
-maxWidth:"800px",
-margin:"20px auto",
+maxWidth:"900px",
+margin:"30px auto",
 textAlign:"center",
 lineHeight:"1.7"
 }}>
@@ -138,23 +185,39 @@ We are committed to providing a <b>high-quality, hassle-free, and dependable ser
 {/* BOOKING */}
 <section id="booking" style={{
 padding:"60px",
-background:"#f5f5f5",
+background:"#f4f7f7"
+}}>
+
+<div style={{
+maxWidth:"1100px",
+margin:"0 auto",
 display:"flex",
 flexWrap:"wrap",
-gap:"50px",
+gap:"40px",
 justifyContent:"center"
 }}>
 
-<div style={{maxWidth:"400px",width:"100%"}}>
+{/* LEFT - FORM CARD */}
+<div style={{
+flex:"1",
+minWidth:"300px",
+background:"#fff",
+padding:"30px",
+borderRadius:"12px",
+boxShadow:"0 6px 20px rgba(0,0,0,0.1)"
+}}>
 
-<h2 style={{color:"#09B7A1"}}>Book a Service</h2>
+<h2 style={{color:"#09B7A1",marginBottom:"20px"}}>
+Book a Service
+</h2>
 
-<form onSubmit={sendEmail} style={{display:"flex",flexDirection:"column",gap:"10px"}}>
-<input name="name" placeholder="Name" required/>
-<input name="phone" placeholder="Phone" required/>
-<input name="email" placeholder="Email" required/>
+<form onSubmit={sendEmail} style={{display:"flex",flexDirection:"column",gap:"15px"}}>
 
-<select name="service">
+<input name="name" placeholder="Full Name" required style={inputStyle}/>
+<input name="phone" placeholder="Phone Number" required style={inputStyle}/>
+<input name="email" placeholder="Email Address" required style={inputStyle}/>
+
+<select name="service" style={inputStyle}>
 <option>Plumbing</option>
 <option>Electrical</option>
 <option>Carpentry</option>
@@ -163,9 +226,20 @@ justifyContent:"center"
 <option>Cleaning</option>
 </select>
 
-<textarea name="problem" placeholder="Problem"/>
+<textarea name="problem" placeholder="Describe your problem" rows="4" style={inputStyle}/>
 
-<button style={{background:"#09B7A1",color:"#fff",padding:"10px"}}>
+<button
+style={{
+background:"#09B7A1",
+color:"#fff",
+padding:"14px",
+border:"none",
+borderRadius:"8px",
+fontWeight:"bold",
+cursor:"pointer",
+boxShadow:"0 4px 12px rgba(0,0,0,0.2)"
+}}
+>
 Send Request
 </button>
 
@@ -173,27 +247,61 @@ Send Request
 
 </div>
 
-<div style={{maxWidth:"400px"}}>
-<h2 style={{color:"#09B7A1"}}>Contact Us</h2>
-<p style={{marginTop:"20px"}}>
+{/* RIGHT - CONTACT CARD */}
+<div style={{
+flex:"1",
+minWidth:"300px",
+background:"#fff",
+padding:"30px",
+borderRadius:"12px",
+boxShadow:"0 6px 20px rgba(0,0,0,0.1)"
+}}>
 
-<b>Qwickrepair Solutions</b><br/>
+<h2 style={{color:"#09B7A1",marginBottom:"20px"}}>
+Contact Us
+</h2>
 
+<p style={{lineHeight:"1.7"}}>
+<b style={{fontSize:"18px"}}>Qwickrepair Solutions</b><br/>
 No. 143/2, 4th Cross, 1st Main,<br/>
-
 Krishnayan Palya, Indiranagar,<br/>
-
-Bengaluru – 560038
-
-</p>
-
-<p>
-
-<b>Phone:</b> +91 8880787787<br/>
-<b>Email:</b> qwickrepair@gmail.com<br/>
-<b>Working Hours:</b> 8:00AM – 8:00PM
+Bengaluru - 560038
 
 </p>
+
+<div style={{marginTop:"20px",lineHeight:"0.2"}}>
+
+<p><b>Email:</b> qwickrepair@gmail.com</p>
+<p><b>Hours:</b> 8:00AM - 8:00PM</p> {/* SOCIAL ICONS */}
+<div style={{
+display:"flex",
+gap:"12px",
+marginTop:"10px"
+}}>
+
+<a href="#" target="_blank">
+<img src="/icons/facebook.png" style={iconStyle}/>
+</a>
+
+<a href="#" target="_blank">
+<img src="/icons/instagram.png" style={iconStyle}/>
+</a>
+
+<a href="#" target="_blank">
+<img src="/icons/telegram.png" style={iconStyle}/>
+</a>
+
+<a href="https://wa.me/918880787787" target="_blank">
+<img src="/icons/whatsapp.png" style={iconStyle}/>
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
 </div>
 
 </section>
@@ -219,8 +327,8 @@ style={{
 background:"#09B7A1",
 color:"#fff",
 border:"none",
-padding:"12px",
-borderRadius:"50%",
+padding:"16px",
+borderRadius:"60%",
 cursor:"pointer",
 boxShadow:"0 4px 10px rgba(0,0,0,0.2)"
 }}
@@ -234,7 +342,7 @@ boxShadow:"0 4px 10px rgba(0,0,0,0.2)"
 <a href="https://wa.me/918880787787" target="_blank">
 
 <img
-  src="/whatsapp.png"
+  src="/icons/whatsapp.png"
   alt="WhatsApp"
   style={{
     width:"50px",
@@ -248,6 +356,35 @@ boxShadow:"0 4px 10px rgba(0,0,0,0.2)"
 
 </div>
 
+<div>
+
+{/* FLOATING BUTTONS */}
+
+<div style={{
+position:"fixed",
+right:"20px",
+bottom:"20px"
+}}>
+  ...
+</div>
+
+{/* FOOTER */}
+<footer
+style={{
+background:"#09B7A1",
+color:"#fff",
+textAlign:"center",
+padding:"20px",
+marginTop:"40px"
+}}
+>
+<p style={{margin:0}}>
+© 2026 Qwickrepair Solutions. All rights reserved.
+</p>
+</footer>
+
+</div>
+
 </div>
 )
 
@@ -256,20 +393,45 @@ boxShadow:"0 4px 10px rgba(0,0,0,0.2)"
 function ServiceCard({title,image,message}){
 
 return(
-<a href={`https://wa.me/918880787787?text=${message}`} target="_blank">
 
-<div style={{
-borderRadius:"10px",
-boxShadow:"0 4px 10px rgba(0,0,0,0.1)",
-padding:"10px"
-}}>
+<a
+href={`https://wa.me/918880787787?text=${encodeURIComponent(message)}`}
+target="_blank"
+style={{textDecoration:"none",color:"#000"}}
+>
 
-<img src={image} style={{width:"100%",height:"200px",objectFit:"cover"}}/>
+<div
+style={{
+borderRadius:"12px",
+overflow:"hidden",
+boxShadow:"0 6px 20px rgba(0,0,0,0.1)",
+background:"#fff",
+textAlign:"center",
+padding:"20px"
+}}
+>
+
+<img
+src={image}
+style={{
+width:"100%",
+height:"120px",
+objectFit:"contain",
+marginBottom:"10px"
+}}
+/>
 
 <h3>{title}</h3>
+
+<p style={{color:"#09B7A1",fontWeight:"bold"}}>
+Book Now
+</p>
 
 </div>
 
 </a>
+
 )
+
 }
+
