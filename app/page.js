@@ -262,7 +262,7 @@ Contact Us
 </h2>
 
 <p style={{lineHeight:"1.7"}}>
-<b style={{fontSize:"18px"}}>Qwickrepair Solutions</b><br/>
+<b style={{fontSize:"20px"}}>Qwickrepair Solutions</b><br/>
 No. 143/2, 4th Cross, 1st Main,<br/>
 Krishnayan Palya, Indiranagar,<br/>
 Bengaluru - 560038
