@@ -101,7 +101,7 @@ boxShadow:"0 2px 10px rgba(0,0,0,0.1)"
 
 <div style={{display:"flex",gap:"20px"}}>
 <a href="#services">Services</a>
-<a href="#about">About</a>
+<a href="#about">About Us</a>
 <a href="#booking">Book Now</a>
 </div>
 
