@@ -24,3 +24,16 @@ body {
   font-size: 18px;
   letter-spacing: 2px;
 }
+.cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial-card {
+  min-width: 280px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
