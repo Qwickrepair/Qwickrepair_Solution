@@ -182,6 +182,42 @@ We are committed to providing a <b>high-quality, hassle-free, and dependable ser
 
 </section>
 
+{/* SERVICES */}
+<section id="testimonials">
+  <div class="container">
+    <h2 class="section-title">Testimonials</h2>
+    <p class="section-subtitle">What our happy customers say about Qwickrepair</p>
+
+    <div class="testimonial-grid">
+
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>"Had a major leakage issue, and Qwickrepair responded quickly. Very professional and clean work!"</p>
+        <h4>- Ravi S., Bangalore</h4>
+      </div>
+
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>"Carpentry work was done perfectly. The team was skilled and completed everything on time."</p>
+        <h4>- Priya K., Whitefield</h4>
+      </div>
+
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>"Electrical issue fixed in one visit. Technician was knowledgeable and very polite."</p>
+        <h4>- Arjun M., Marathahalli</h4>
+      </div>
+
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>"Painting service was excellent. My home looks fresh and beautiful. Highly recommend Qwickrepair!"</p>
+        <h4>- Sneha R., Bangalore</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 {/* BOOKING */}
 <section id="booking" style={{
 padding:"60px",
