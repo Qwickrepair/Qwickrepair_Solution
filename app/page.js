@@ -193,7 +193,7 @@ We are committed to providing a <b>high-quality, hassle-free, and dependable ser
       <div class="card">
         <div class="stars">★★★★★</div>
         <p>"Had a major leakage issue, and Qwickrepair responded quickly. Very professional and clean work!"</p>
-        <h4>- Ravi S., Bangalore</h4>
+        <h4>- Ravi S., Nikoo Homes</h4>
       </div>
 
       <div class="card">
