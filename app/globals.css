@@ -18,4 +18,9 @@ body {
     transform: translateX(-50%);
   }
 }
-
+.stars {
+  color: #FFD700; /* Pure gold */
+  margin: 10px 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
