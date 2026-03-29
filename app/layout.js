@@ -13,3 +13,10 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+.cards::-webkit-scrollbar {
+  display: none;
+}
+.cards {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
