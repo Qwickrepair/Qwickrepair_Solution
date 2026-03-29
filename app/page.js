@@ -183,8 +183,8 @@ We are committed to providing a <b>high-quality, hassle-free, and dependable ser
 
 </section>
 
-{/* SERVICES */}
-<section id="testimonials">
+{/* TESTIMONIALS */}
+<section id="TESTIMONIALS">
   <div class="container">
     <h2 class="section-title">Testimonials</h2>
     <p class="section-subtitle">What our happy customers say about Qwickrepair</p>
